@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+
+    <style>
+        .p-search{
+            background:#fafafa;
+            padding:5px;
+            border:1px solid #ccc;
+            border-bottom:0;
+            overflow:hidden;
+        }
+        .p-search input{
+            width:300px;
+            border:1px solid #ccc;
+            background: #fff url('images/search.png') no-repeat right top;
+        }
+        .p-right{
+            text-align:center;
+            border:1px solid #ccc;
+            border-left:0;
+            width:150px;
+            background:#fafafa;
+            padding-top:10px;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+   <div class="easyui-accordion" style="width:300px;height:200px;">
+        <div title="About Accordion" iconCls="icon-ok" style="overflow:auto;padding:10px;">
+            <h3 style="color:#0099FF;">Accordion for jQuery</h3>
+            <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+        </div>
+        <div title="About easyui" iconCls="icon-reload" selected="true" style="padding:10px;">
+            easyui help you build your web page easily
+        </div>
+        <div title="Tree Menu">
+            <ul id="tt1" class="easyui-tree">
+                <li>
+                    <span>Folder1</span>
+                    <ul>
+                        <li>
+                            <span>Sub Folder 1</span>
+                            <ul>
+                                <li><span>File 11</span></li>
+                                <li><span>File 12</span></li>
+                                <li><span>File 13</span></li>
+                            </ul>
+                        </li>
+                        <li><span>File 2</span></li>
+                        <li><span>File 3</span></li>
+                    </ul>
+                </li>
+                <li><span>File2</span></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+            function showcontent(language){
+        $('#content').html('Introduction to ' + language + ' language');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+        
+    </style>
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+<h1>Merge Cells for DataGrid</h1>
+
+    <table id="tt" title="Merge Cells" style="width:550px;height:250px"
+            url="dataEasyUi"
+            singleSelect="true" iconCls="icon-save" rownumbers="true"
+            idField="itemid" pagination="true">
+        <thead frozen="true">
+            <tr>
+                <th field="productid" width="80" formatter="formatProduct">Product ID</th>
+                <th field="itemid" width="100">Item ID</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th colspan="2">Price</th>
+                <th rowspan="2" field="attr1" width="150">Attribute</th>
+                <th rowspan="2" field="status" width="60" align="center">Stauts</th>
+            </tr>
+            <tr>
+                <th field="listprice" width="80" align="right">List Price</th>
+                <th field="unitcost" width="80" align="right">Unit Cost</th>
+            </tr>
+        </thead>
+    </table>
+
+
+
+
+    <script>
+        var products = [
+            {productid:'FI-SW-01',name:'Koi'},
+            {productid:'K9-DL-01',name:'Dalmation'},
+            {productid:'RP-SN-01',name:'Rattlesnake'},
+            {productid:'RP-LI-02',name:'Iguana'},
+            {productid:'FL-DSH-01',name:'Manx'},
+            {productid:'FL-DLH-02',name:'Persian'},
+            {productid:'AV-CB-01',name:'Amazon Parrot'}
+        ];
+        function formatProduct(value){
+            for(var i=0; i<products.length; i++){
+                if (products[i].productid == value) return products[i].name;
+            }
+            return value;
+        }
+        $(function(){
+            $('#tt').datagrid({
+                onLoadSuccess:function(){
+                    var merges = [{
+                        index:2,
+                        rowspan:2
+                    },{
+                        index:5,
+                        rowspan:2
+                    },{
+                        index:7,
+                        rowspan:2
+                    }];
+                    for(var i=0; i<merges.length; i++)
+                        $('#tt').datagrid('mergeCells',{
+                            index:merges[i].index,
+                            field:'productid',
+                            rowspan:merges[i].rowspan
+                        });
+                }
+            });
+        });
+
+
+    </script>
+
+
+    
+</body>
+</html>

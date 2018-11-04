@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+     <div class="easyui-tabs" style="width:400px;height:100px;">
+        <div title="First Tab" style="padding:10px;">
+            First Tab
+        </div>
+        <div title="Second Tab" closable="true" style="padding:10px;">
+            Second Tab
+        </div>
+        <div title="Third Tab" iconCls="icon-reload" closable="true" style="padding:10px;">
+            Third Tab
+        </div>
+    </div>
+    <script type="text/javascript">
+            function showcontent(language){
+        $('#content').html('Introduction to ' + language + ' language');
+    }
+    </script>
+</body>
+</html>

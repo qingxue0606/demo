@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+     <table id="tt" title="Frozen Columns" class="easyui-datagrid" style="width:550px;height:250px"
+            url="dataEasyUi"
+            singleSelect="true" iconCls="icon-save">
+    </table>
+     
+
+    <script>
+   /*$('#tt').datagrid({
+        columns:[[
+            {field:'itemid',title:'Item ID',width:80},
+            {field:'productid',title:'Product ID',width:80},
+            {field:'attr1',title:'Attribute',width:200},
+            {field:'status',title:'Status',width:80}
+        ]]
+    });*/
+
+    $('#tt').datagrid({
+        columns:[[
+            {field:'itemid',title:'Item ID',width:80},
+            {field:'productid',title:'Product ID',width:80},
+            {field:'listprice',title:'List Price',width:80,align:'right'},
+            {field:'unitcost',title:'Unit Cost',width:80,align:'right'},
+            {field:'attr1',title:'Attribute',width:100},
+            {field:'status',title:'Status',width:60}
+        ]]
+    });
+    </script>
+
+
+    
+</body>
+</html>

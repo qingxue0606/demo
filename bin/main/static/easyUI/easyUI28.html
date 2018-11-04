@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+      <table id="tt" class="easyui-datagrid" style="width:600px;height:250px"
+            url="dataEasyUi"
+            title="Load Data" iconCls="icon-save"
+            rownumbers="true" pagination="true">
+        <thead>
+            <tr>
+                <th field="itemid" width="80" sortable="true">Item ID</th>
+                <th field="productid" width="80" sortable="true">Product ID</th>
+                <th field="listprice" width="80" align="right" sortable="true">List Price</th>
+                <th field="unitcost" width="80" align="right" sortable="true">Unit Cost</th>
+                <th field="attr1" width="150">Attribute</th>
+                <th field="status" width="60" align="center">Stauts</th>
+            </tr>
+        </thead>
+    </table>
+     
+
+    <script>
+   /*$('#tt').datagrid({
+        columns:[[
+            {field:'itemid',title:'Item ID',width:80},
+            {field:'productid',title:'Product ID',width:80},
+            {field:'attr1',title:'Attribute',width:200},
+            {field:'status',title:'Status',width:80}
+        ]]
+    });*/
+
+      function formatPrice(val,row){
+        if (val < 114){
+            return '<span style="color:red;">('+val+')</span>';
+        } else {
+            return val;
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html>

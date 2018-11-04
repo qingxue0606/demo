@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.3.5/themes/icon.css">
+
+
+
+
+<!--          <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>  -->
+
+        
+<!--     <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script> 
+ 
+ 
+  <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>   -->
+
+
+<!--     <script type="text/javascript" src="jquery-easyui-1.3.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.3.5/jquery.easyui.min.js"></script> -->
+
+
+<!--       <script type="text/javascript" src="jquery-easyui-1.6.7/plugins/datagrid-detailview.js"></script> -->
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/datagrid-scrollview.js"></script> 
+
+    <style type="text/css">
+        
+    </style>
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+    <h2>DataGrid Virtual Scroll View Demo</h2>
+    <div class="demo-info" style="margin-bottom:10px">
+        <div class="demo-tip icon-tip">&nbsp;</div>
+        <div>Drag the vertical scroll and release it to navigate to the desired page.</div>
+    </div>
+    
+    <div style="margin-bottom:10px">
+        <select onchange="load(this.value)">
+            <option value="remote">Load Remote Data</option>
+            <option value="local">Load Local Data</option>
+        </select>
+    </div>
+    
+    <table id="tt" class="easyui-datagrid" style="width:700px;height:300px"
+            title="DataGrid - VirtualScrollView"
+            data-options="view:scrollview,rownumbers:true,singleSelect:true,
+                url:'saveEasyUi',autoRowHeight:false,pageSize:10">
+        <thead>
+            <tr>
+                <th field="inv" width="80">Inv No</th>
+                <th field="date" width="100">Date</th>
+                <th field="name" width="80">Name</th>
+                <th field="amount" width="80" align="right">Amount</th>
+                <th field="price" width="80" align="right">Price</th>
+                <th field="cost" width="100" align="right">Cost</th>
+                <th field="note" width="110">Note</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+        $(function(){
+            loadLocal();
+        });
+        function loadLocal(){
+            var rows = [];
+            for(var i=1; i<=8000; i++){
+                var amount = Math.floor(Math.random()*1000);
+                var price = Math.floor(Math.random()*1000);
+                rows.push({
+                    inv: 'Inv No '+i,
+                    date: $.fn.datebox.defaults.formatter(new Date()),
+                    name: 'Name '+i,
+                    amount: amount,
+                    price: price,
+                    cost: amount*price,
+                    note: 'Note '+i
+                });
+            }
+            $('#tt').datagrid('loadData', rows);
+        }
+        function load(mode){
+            if (mode == 'local'){
+                loadLocal();
+            } else {
+                $('#tt').datagrid({
+                    url:'saveEasyUi'
+                });
+            }
+        }
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>

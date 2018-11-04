@@ -1,0 +1,584 @@
+@charset "UTF-8";
+#container{
+        width: 100%;
+        height: 100%;
+        margin: 0px
+}
+.map_train_center button {
+	margin: 0 0.5em 0.5em 0;
+	font-weight: 600;
+}
+
+.map_train_center_normal button{
+	color: #00ff00;
+}
+.map_train_center_slight button{
+	color: #FF9b00;
+}
+.map_train_center_serious button{
+	color: #FF0000;
+}
+
+.metro_mot_find_back {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(55, 55, 55, 0.3);
+	top: 0;
+	left: 0;
+}
+
+.metro_not_find {
+	max-height: 80%;
+	background: #FFFFFF;
+	border: 0.1em solid #DDDDDD;
+	border-radius: 0.4em;
+	margin: 5em auto 0;
+	overflow: auto;
+}
+
+.input-group .form-control {
+	z-index: 0;
+}
+
+.btn-primary {
+	border-radius: 0.2em;
+}
+
+.nav {
+	background: #F1FAFA;
+}
+
+.nav a {
+	color: #636363;
+	font-family: "华文新魏";
+}
+
+.active a {
+	color: #1B8E46 !important;
+	background: #DDDDDD !important;
+}
+
+.lower-fillet {
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
+
+.model-title {
+	width: 100%;
+	line-height: 2em;
+	font-size: 1.3em;
+	font-weight: 600;
+	font-family: "隶书";
+	text-shadow: 0.2em -0.2em 0.3em #E1E1E1;
+}
+
+.search_option {
+	padding: 0 1em;
+	float: left;
+	width: auto;
+	height: auto;
+}
+
+.search_option img {
+	margin-left: 0.2em;
+}
+
+.search_option_click:hover {
+	background: #FFFFFF;
+}
+
+.search_option input {
+	height: 2.5em;
+	margin: 0.25em 0;
+}
+
+.vehicle_point {
+	width: 0;
+	height: 0;
+	border-bottom: 1.5em solid transparent;
+	border-top: 1.5em solid transparent;
+	border-right: 2em solid #DDDDDD;
+	position: absolute;
+}
+
+/* 轮播图 */
+/* 
+#map_info_back{
+
+
+	position: fixed;
+	width:100vw;
+	height:100vh;
+	top:0;
+	left:0;
+	background: rgba(0,0,0,0.3);
+}
+
+#map_info_header{
+	width:100%;
+	height:10%;
+	padding: 0 10%;
+}
+
+#map_info_header div{
+	width:10%;
+	height:100%;
+	float: left;
+	text-align: center;
+	border-left: 0.01em solid #ddd;
+	border-right: 0.01em solid #ddd;
+	border-bottom: 0.01em solid #ddd;
+	font-weight: 600;
+	font-size: 2em;
+	font-family: "隶书";
+	background: #F1FAFA;
+}
+
+.map_info_header_click_div{
+	background: #F1F1F1;
+	color: #228E48 !important;
+}
+
+#map_info_header div:hover{
+	opacity: :0.7;
+	cursor: pointer;
+}
+
+#map_info_content{
+	width:100%;
+	height:90%;
+	position: relative;
+}
+
+.map_info{
+	background: #FFFFFF;
+	position: absolute;
+} */
+#map_event_center div {
+	margin-right: 0.5em;
+}
+
+#map_event_center .sligt_event_vehicle, #map_event_center .serious_event_vehicle,
+	#map_offline_vehicle .off_vehicle_back {
+	display: block;
+	margin: 0.2em 0.3em 0 0.1em;
+	float: left;
+	width: 5em;
+	line-height: 2.5em;
+	text-align: center;
+	font-weight: 600;
+	cursor: pointer;
+	color: #000;
+}
+
+#map_event_center .sligt_event_vehicle {
+	background: url("../../../images/edit/map/yelloEvent.png");
+	background-size: 100% 100%;
+}
+
+#map_event_center .serious_event_vehicle {
+	background: url("../../../images/edit/map/redEvent.png");
+	background-size: 100% 100%;
+}
+
+#map_event_center .sligt_event_vehicle:hover, #map_event_center .serious_event_vehicle:hover,
+	#map_offline_vehicle .off_vehicle_back:hover {
+	opacity: 0.6;
+}
+
+#map_offline_vehicle .off_vehicle_back {
+	background: url("../../../images/edit/map/offline.png");
+	background-size: 100% 100%;
+}
+
+.vehicleSurveillance {
+	cursor: pointer;
+	background: #FFFFFF;
+	border-radius: 0.3em;
+	box-shadow: 0.3em -0.2em 1em rgba(0, 0, 0, 0.3);
+	height: 5%;
+	width: 90%;
+	text-align: center;
+	white-space: nowrap;
+	margin: 5% auto;
+}
+
+.vehicleSurveillance:hover {
+	background: #F9F9F9;
+}
+
+.vehicleSurveillance img {
+	height: 40%;
+	display: block;
+}
+
+.map_search {
+	background: #F1FAFA;
+	border: 0.1em solid #DDDDDD;
+	height: 2.2em;
+	line-height: 2.2em;
+	text-align: center;
+	border-radius: 0.2em;
+}
+
+.map_search_button {
+	width: 20em;
+	position: absolute;
+	top: 1%;
+	left: 1%;
+	z-index: 110;
+}
+
+.map_search_vehicle {
+	width: 8em;
+	/* width: 15em; */
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	z-index: 110;
+	position: absolute;
+}
+
+.map_search_div {
+	width: 100%;
+	/* width: 50%; */
+	height: 100%;
+}
+
+.map_search_div:hover {
+	color: #303030;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.map_search_absolute {
+	position: absolute;
+	top: 100%;
+	left: -0.1em;
+	background: #F1FAFA !important;
+	min-width: 102%;
+	border: 0.1em solid #DDDDDD;
+	border-top: 0;
+	border-radius: 0.2em;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	display: none;
+	min-width: 102%;
+}
+
+.map_search_absolute .checkbox {
+	padding-left: 10%;
+	text-align: left;
+}
+
+.map_search_absolute input {
+	margin-top: 0.6em;
+}
+
+#run_monitoring {
+	width: 80%;
+	height: 80%;
+	box-shadow: 0.2em -0.2em 1em rgba(0, 0, 0, 0.3);
+	margin: 0 auto;
+	background: #F5F5F5;
+	border-radius: 0.5em;
+	min-width: 80em;
+}
+
+.vehicle_carriage div {
+	font-size: 1em;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+
+.info_vehicle_id {
+	font-size: 1.2em;
+	font-weight: 600;
+	float: left;
+	margin-left: 10%;
+	width: auto;
+	overflow: hidden;
+}
+
+.maintain_back {
+	width: 95%;
+	height: 96%;
+	overflow: auto;
+	margin: 0 auto;
+	background: #FFFFFF;
+	box-shadow: 0.2em 0.3em 1.5em rgba(0, 0, 0, 0.3);
+	border-radius: 0.5em;
+}
+
+.maintain_title {
+	font-weight: 600;
+	font-size: 2em;
+	font-family: '隶书';
+	text-shadow: 0.1em -0.05em 0.1em rgba(0, 0, 0, 0.5);
+}
+
+.info_vehicle_id_click {
+	background: #F1FAFA !important;
+	border-radius: 0.3em;
+}
+
+.info_vehicle_id_click span {
+	color: #228E48 !important;
+}
+
+.info_basis {
+	width: 10%;
+	float: left;
+	height: 80%;
+	border: 0.1em solid #DDDDDD;
+	background: #636363;
+	box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+	border-radius: 0.5em;
+	margin-right: 2.5%;
+	text-align: center;
+}
+
+.info_basic_status {
+	width: 100%;
+	height: 49%;
+	background: #F1FAFA;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
+
+.info_basic_alarm {
+	float: left;
+	height: 80%;
+	background: #636363;
+	box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+	border-radius: 0.5em;
+	position: relative;
+}
+
+.info_basic_alarm img {
+	margin: 15% 0 0 15%;
+	width: 70%;
+	height: 70%;
+	display: block;
+}
+
+.info_basic_alarm span {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.info_basic_text {
+	font-size: 2em;
+	float: left;
+	height: 100%;
+	position: relative;
+	margin: 0 0.1%;
+}
+
+.info_basic_text div {
+	position: absolute;
+	bottom: 11%;
+}
+
+.info_menu {
+	text-align: center;
+	float: left;
+	padding: 0 1%;
+	height: 40%;
+	margin-right: 1%;
+	background: #FFFFFF;
+	font-size: 1.4em;
+	font-weight: 600;
+	font-family: "隶书";
+	box-shadow: 0.2em -0.3em 0.4em 0.4em rgba(0, 0, 0, 0.3) inset;
+}
+
+.info_menu {
+	border-radius: 0.6em;
+}
+
+.info_menu:hover {
+	box-shadow: 0.1em -0.1em 0.3em 0.3em rgba(0, 0, 0, 0.2) inset;
+}
+
+.info_menu_click {
+	color: #0F9241 !important;
+	background: #F1FAFA !important;
+	box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3) !important;
+}
+
+.info_table_back {
+	width: 95%;
+	max-height: 100%;
+	overflow: auto;
+	margin: 0 auto;
+}
+
+.info_table {
+	font-size: 1em;
+	table-layout: fixed;
+	width: 90%;
+	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+	background: #F1FAFA;
+}
+
+.table_back_63 {
+	background: #636363;
+}
+
+.table_back_63 th, .table_back_63 td, .table_back_63 div, .table_back_63 span
+	{
+	color: #F1FAFA;
+}
+
+.info_table td {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.info_run_air_status {
+	height: 10%;
+	border: 0.1em solid #dddddd;
+	border-radius: 0.5em;
+	margin: 0 auto;
+	background: #636363;;
+	box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.communication_tbody td {
+	padding: 0 0.3em !important;
+}
+
+.communication_tbody td div {
+	color: #FFFFFF;
+	min-height: 2.5em;
+	line-height: 2.5em;
+}
+
+.change_page {
+	margin-right: 2em;
+}
+
+.change_page div {
+	float: left;
+	height: 2em;
+	border: 0.1em solid #636363;
+	border-radius: 0.3em;
+	margin-left: 0.5em;
+	line-height: 2em;
+	text-align: center;
+	padding: 0 0.3em;
+}
+
+.change_page_div:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.change_page_not {
+	opacity: 1 !important;
+	cursor: not-allowed !important;
+}
+
+.change_page_click {
+	background: #1B8E46;
+	color: #FFFFFF;
+	cursor: inherit !important;
+	opacity: 1 !important;
+}
+
+.change_big {
+	cursor: inherit !important;
+	opacity: 1 !important;
+}
+
+.kh1 {
+	width: 100%;
+	height: 1%;
+}
+
+.kh2 {
+	width: 100%;
+	height: 2%;
+}
+
+.kh10 {
+	width: 100%;
+	height: 10%;
+}
+
+.kh4 {
+	width: 100%;
+	height: 4%;
+}
+
+.kh5 {
+	width: 100%;
+	height: 5%;
+}
+
+.kh8 {
+	width: 100%;
+	height: 8%;
+}
+
+.kh10 {
+	width: 100%;
+	height: 10%;
+}
+
+.kh20 {
+	width: 100%;
+	height: 20%;
+}
+
+.kh25 {
+	width: 100%;
+	height: 25%;
+}
+
+.kh30 {
+	width: 100%;
+	height: 30%;
+}
+
+.kl1 {
+	width: 1%;
+	height: 100%;
+	float: left;
+}
+
+.kl2 {
+	width: 2%;
+	height: 100%;
+	float: left;
+}
+
+.kl3 {
+	width: 3%;
+	height: 100%;
+	float: left;
+}
+
+.kl23 {
+	width: 23%;
+	height: 100%;
+	float: left;
+}
+
+.kl48 {
+	width: 48%;
+	height: 100%;
+	float: left;
+}
+
+.requiredFiled {
+	margin-left: 5px;
+	color: #FF0000;
+}

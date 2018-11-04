@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<!-- 引入bootstrap样式 -->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<!-- 引入bootstrap-table样式 -->
+<link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+<link href="/css/bootstrap-table-pagejump.css" rel="stylesheet">
+
+
+
+<!-- jquery -->
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- bootstrap-table.min.js -->
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<!-- 引入中文语言包 -->
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="js/bootstrap-table-pagejump.js"></script>
+
+
+
+
+	<title>Document</title>
+
+</head>
+<body>
+<table id="table"></table>
+
+<script type="text/javascript">
+	/*bootstrap table*/
+$('#table').bootstrapTable({
+    paginationShowPageGo: true,
+    url:"easyUI/TableSplitResult",//请求数据url
+    queryParams: function (params) {
+        return {
+            offset: params.offset,  //页码
+            limit: params.limit,   //页面大小
+            search : params.search, //搜索
+            order : params.order, //排序
+            ordername : params.sort, //排序
+        };
+    },
+    showHeader : true,
+    showColumns : true,
+    showRefresh : true,
+    pagination: true,//分页
+    sidePagination : 'server',//服务器端分页
+    pageNumber : 1,
+    pageList: [5, 10, 20, 50],//分页步进值
+    search: true,//显示搜索框
+    //表格的列
+    columns: [
+        {
+            field: 'id',//域值
+            title: '规则ID',//标题
+            visible: true,//false表示不显示
+            sortable: true,//启用排序
+            width : '5%',
+        },
+        {
+            field: 'name',//域值
+            title: '唯一英文标识',//标题
+            visible: true,//false表示不显示
+            sortable: true,//启用排序
+            width : '30%',
+            editable:true,
+        },
+        {
+            field: 'title',//域值
+            title: '中文描述',//内容
+            visible: true,//false表示不显示
+            sortable: true,//启用排序
+            width : '35%',
+            editable:true,
+        },
+        {
+            field: 'status',//域值
+            title: '状态',//内容
+            visible: true,//false表示不显示
+            sortable: true,//启用排序
+            width : '20%',
+            formatter : function (value, row, index) {
+                if (row['status'] === 1) {
+                    return '正常';
+                }
+                if (row['status'] === 0) {
+                    return '禁用';
+                }
+                return value;
+            }
+        }
+    ]
+});
+</script>
+
+
+
+</body>
+</html>

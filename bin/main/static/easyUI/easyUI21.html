@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+
+  <div id="tb" style="padding:3px">
+    <span>Item ID:</span>
+    <input id="itemid" style="line-height:26px;border:1px solid #ccc">
+    <span>Product ID:</span>
+    <input id="productid" style="line-height:26px;border:1px solid #ccc">
+    <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
+</div>
+
+
+
+<table id="tt" class="easyui-datagrid" style="width:600px;height:250px"
+url="dataEasyUi" toolbar="#tb"
+title="Load Data" iconCls="icon-save"
+rownumbers="true" pagination="true">
+<thead>
+    <tr>
+        <th field="itemid" width="80">Item ID</th>
+        <th field="productid" width="80">Product ID</th>
+        <th field="listprice" width="80" align="right">List Price</th>
+        <th field="unitcost" width="80" align="right">Unit Cost</th>
+        <th field="attr1" width="150">Attribute</th>
+        <th field="status" width="60" align="center">Stauts</th>
+    </tr>
+</thead>
+
+
+     
+
+    <script>
+function doSearch(){
+        $('#tt').datagrid('load',{
+            itemid: $('#itemid').val(),
+            productid: $('#productid').val()
+        });
+    }
+    </script>
+
+
+    
+</body>
+</html>

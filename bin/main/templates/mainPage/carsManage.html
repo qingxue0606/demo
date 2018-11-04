@@ -1,0 +1,95 @@
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <div class="row">
+  	<div class="col-xs-12">
+  		<div class="box">
+  			<div class="box-header">
+  				<!-- <h3 class="box-title">历史数据</h3> -->
+
+
+  				<form class="form-inline" role="form">
+  					<div class="form-group">
+  						<input type="text" class="form-control" id="name" placeholder="请输入名称">
+  					</div>
+  					<button type="button" class="btn btn-default">查询</button>
+
+  					<button type="submit" class="btn btn-default pull-right btn-addOrSaveObject">新增</button>
+  				</form>
+  			</div>
+  			<!-- /.box-header -->
+  			<div class="box-body table-responsive no-padding">
+  				<table class="table table-hover">
+  					<thead>
+  						<tr>
+  							<th>NO</th>
+  							<th>编组</th>
+  							<th>所属线路</th>
+  							<th>所属类型</th>
+  						</tr>
+  					</thead>
+  					<tbody id="tbodyId">
+              <tr>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+              </tr>
+              <tr>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+              </tr>
+              <tr>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+              </tr>
+              <tr>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+              </tr>
+              <tr>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+                <td>列车编组</td>
+              </tr>
+             
+  						
+  					</tbody>
+  				</table>
+  			</div>
+  			<!-- /.box-body -->
+  			<div id="pageId" class="box-footer clearfix">
+  			</div>
+  		</div>
+  		<!-- /.box -->
+  	</div>
+  </div>
+  <!-- bootstrap datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script type="text/javascript">
+  	$(function(){
+		//页面加载完成以后,加载分页信息
+		$("#pageId").load("common/pageUI");
+    //Date picker
+    $('#datepicker').datepicker({
+    	autoclose: true
+    });
+
+    $(".btn-addOrSaveObject").click(function(){
+      $(".content-main").load("main/carsManage-edit",function(){
+        
+      });
+    });
+
+});
+
+</script>
+

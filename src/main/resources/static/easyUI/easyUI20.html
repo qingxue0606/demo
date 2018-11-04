@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+<h1>DataGrid</h1>
+    <div style="margin-bottom:20px">
+        <a href="#" onclick="getSelected()">GetSelected</a>
+        <a href="#" onclick="getSelections()">GetSelections</a>
+    </div>
+    <table id="tt" class="easyui-datagrid" style="width:600px;height:250px"
+            url="dataEasyUi"
+            title="Load Data" iconCls="icon-save" fitColumns="true">
+        <thead>
+            <tr>
+                <th field="id" width="80">Item ID</th>
+                <th field="lastname" width="80">Product ID</th>
+                <th field="phone" width="80" align="right">List Price</th>
+                <th field="email" width="80" align="right">Unit Cost</th>
+                <th field="attr1" width="150">Attribute</th>
+                <th field="status" width="60" align="center">Stauts</th>
+            </tr>
+        </thead>
+    </table>
+
+
+     
+
+    <script>
+        function getSelected(){
+            var row = $('#tt').datagrid('getSelected');
+            if (row){
+                alert('Item ID:'+row.id+"\nPrice:"+row.listprice);
+            }
+        }
+        function getSelections(){
+            var ids = [];
+            var rows = $('#tt').datagrid('getSelections');
+            for(var i=0; i<rows.length; i++){
+                ids.push(rows[i].id);
+            }
+            alert(ids.join('\n'));
+        }
+    </script>
+
+
+    
+</body>
+</html>

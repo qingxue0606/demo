@@ -1,0 +1,168 @@
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <div class="row">
+  	<div class="col-xs-12">
+  		<div class="box">
+  			<div class="box-header">
+  				<!-- <h3 class="box-title">历史数据</h3> -->
+
+
+  				<form class="form-inline" role="form">
+  					<div class="form-group">
+  						<label>故障等级</label>
+  						<select class="form-control">
+  							<option>option 1</option>
+  							<option>option 2</option>
+  							<option>option 3</option>
+  							<option>option 4</option>
+  							<option>option 5</option>
+  						</select>
+
+
+  						<label>时间范围</label>
+
+  						<div class="input-group date">
+  							<div class="input-group-addon">
+  								<i class="fa fa-calendar"></i>
+  							</div>
+  							<input type="text" class="form-control pull-right" id="datepicker">
+  						</div>
+  						<span>-</span>
+  						<div class="input-group date">
+  							<div class="input-group-addon">
+  								<i class="fa fa-calendar"></i>
+  							</div>
+  							<input type="text" class="form-control pull-right" id="datepicker">
+  						</div>
+
+
+  						<label class="" for="name">故障名称</label>
+  						<input type="text" class="form-control" id="name" placeholder="请输入名称">
+  					</div>
+  					<div class="form-group">
+  						<label class="" for="name">故障代码</label>
+  						<input type="text" class="form-control" id="name" placeholder="请输入名称">
+  					</div>
+  					<button type="button" class="btn btn-default">Default</button>
+
+  					<button type="submit" class="btn btn-default pull-right">提交</button>
+  				</form>
+
+  				<form class="form-inline" role="form">
+  					<label class="" for="name">系统类型</label>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">牵引
+  						</label>
+  					</div>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">辅助
+  						</label>
+  					</div>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">制动
+  						</label>
+  					</div>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">车门
+  						</label>
+  					</div>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">空调
+  						</label>
+  					</div>
+  					<div class="checkbox">
+  						<label>
+  							<input type="checkbox">PIS
+  						</label>
+  					</div>
+
+  				</form>
+
+  			</div>
+  			<!-- /.box-header -->
+  			<div class="box-body table-responsive no-padding">
+  				<table class="table table-hover">
+  					<thead>
+  						<tr>
+  							<th>列车编组</th>
+  							<th>故障代码</th>
+  							<th>故障等级</th>
+  							<th>故障条目</th>
+  							<th>故障内容</th>
+  							<th>发生时间</th>
+  							<th>结束时间</th>
+  							<th>operator</th>
+  						</tr>
+  					</thead>
+  					<tbody id="tbodyId">
+  						<tr>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td><button type="button" class="btn btn-default">编辑</button></td>
+  						</tr>
+  						<tr>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  						</tr>
+  						<tr>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  						</tr>
+  						<tr>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  							<td>列车编组</td>
+  						</tr>
+  					</tbody>
+  				</table>
+  			</div>
+  			<!-- /.box-body -->
+  			<div id="pageId" class="box-footer clearfix">
+  			</div>
+  		</div>
+  		<!-- /.box -->
+  	</div>
+  </div>
+  <!-- bootstrap datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script type="text/javascript">
+  	$(function(){
+		//页面加载完成以后,加载分页信息
+		$("#pageId").load("common/pageUI");
+    //Date picker
+    $('#datepicker').datepicker({
+    	autoclose: true
+    })
+});
+
+</script>
+

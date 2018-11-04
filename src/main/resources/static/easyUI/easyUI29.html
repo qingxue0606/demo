@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+
+
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+       <table id="tt"></table>
+     
+
+    <script>
+var data = {"total":28,"rows":[
+            {"date":"03/04/2010","unitcost":10.00,"status":"P","listprice":16.50,"attr1":"Large","itemid":"EST-1"},
+            {"date":"05/04/2009","unitcost":12.00,"status":"P","listprice":18.50,"attr1":"Spotted Adult Female","itemid":"EST-10"},
+            {"date":"12/31/2005","unitcost":12.00,"status":"P","listprice":18.50,"attr1":"Venomless","itemid":"EST-11"},
+            {"date":"03/21/2010","unitcost":12.00,"status":"P","listprice":18.50,"attr1":"Rattleless","itemid":"EST-12"},
+            {"date":"03/06/2003","unitcost":12.00,"status":"P","listprice":18.50,"attr1":"Green Adult","itemid":"EST-13"},
+            {"date":"07/04/2010","unitcost":12.00,"status":"P","listprice":58.50,"attr1":"Tailless","itemid":"EST-14"},
+            {"date":"11/04/2005","unitcost":12.00,"status":"P","listprice":23.50,"attr1":"With tail","itemid":"EST-15"},
+            {"date":"03/23/2010","unitcost":12.00,"status":"P","listprice":93.50,"attr1":"Adult Female","itemid":"EST-16"},
+            {"date":"03/04/2008","unitcost":12.00,"status":"P","listprice":93.50,"attr1":"Adult Male","itemid":"EST-17"},
+            {"date":"03/04/2006","unitcost":92.00,"status":"P","listprice":193.50,"attr1":"Adult Male","itemid":"EST-18"}
+        ]};
+
+
+        
+   $('#tt').datagrid({
+        title:'Custom Sort',
+        iconCls:'icon-ok',
+        width:520,
+        height:250,
+        singleSelect:true,
+        remoteSort:false,
+        columns:[[
+            {field:'itemid',title:'Item ID',width:60,sortable:true},
+            {field:'listprice',title:'List Price',width:70,align:'right',sortable:true},
+            {field:'unitcost',title:'Unit Cost',width:70,align:'right',sortable:true},
+            {field:'attr1',title:'Attribute',width:120,sortable:true},
+            {field:'date',title:'Date',width:80,sortable:true,align:'center',
+                sorter:function(a,b){
+                    a = a.split('/');
+                    b = b.split('/');
+                    if (a[2] == b[2]){
+                        if (a[0] == b[0]){
+                            return (a[1]>b[1]?1:-1);
+                        } else {
+                            return (a[0]>b[0]?1:-1);
+                        }
+                    } else {
+                        return (a[2]>b[2]?1:-1);
+                    }
+                }
+            },
+            {field:'status',title:'Status',width:40,align:'center'}
+        ]]
+    }).datagrid('loadData', data);
+    </script>
+
+
+    
+</body>
+</html>

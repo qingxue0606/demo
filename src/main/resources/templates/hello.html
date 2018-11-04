@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>study01 - helloWorld</title>
+    </head>
+
+    <body>
+        <h1>Hello : <b th:text="${name}">姓名</b></h1>
+        <p th:utext="#{home.welcome}">Welcome to our grocery store!</p>
+        <p th:utext="#{home.welcome(${session.user})}">
+			Welcome to our grocery store, Sebastian Pepper!
+		</p>
+
+
+
+    </body>
+</html>

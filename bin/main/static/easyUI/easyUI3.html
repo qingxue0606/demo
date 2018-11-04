@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.6.7/plugins/datagrid-detailview.js"></script>
+
+</head>
+<body>
+<table id="dg" title="My Users" style="width:550px;height:250px"
+        url="dataEasyUi"
+        toolbar="#toolbar"
+        fitColumns="true" singleSelect="true">
+    <thead>
+        <tr>
+            <th field="firstname" width="50">First Name</th>
+            <th field="lastname" width="50">Last Name</th>
+            <th field="phone" width="50">Phone</th>
+            <th field="email" width="50">Email</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newItem()">New</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyItem()">Destroy</a>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+   $('#dg').datagrid({
+    view: detailview,
+    detailFormatter:function(index,row){
+        return '<div class="ddv"></div>';
+    },
+    onExpandRow: function(index,row){
+        var ddv = $(this).datagrid('getRowDetail',index).find('div.ddv');
+        ddv.panel({
+            border:false,
+            cache:true,
+            href:'showForm?index='+index,
+            onLoad:function(){
+                $('#dg').datagrid('fixDetailRowHeight',index);
+                $('#dg').datagrid('selectRow',index);
+                $('#dg').datagrid('getRowDetail',index).find('form').form('load',row);
+            }
+        });
+        $('#dg').datagrid('fixDetailRowHeight',index);
+    }
+});
+
+
+   function saveItem(index){
+    var row = $('#dg').datagrid('getRows')[index];
+    var url = row.isNewRecord ? 'saveEasyUi' : 'saveEasyUi?'+row.id;
+    $('#dg').datagrid('getRowDetail',index).find('form').form('submit',{
+        url: url,
+        onSubmit: function(){
+            return $(this).form('validate');
+        },
+        success: function(data){
+            data = eval('('+data+')');
+            data.isNewRecord = false;
+            $('#dg').datagrid('collapseRow',index);
+            $('#dg').datagrid('updateRow',{
+                index: index,
+                row: data
+            });
+        }
+    });
+}
+    function cancelItem(index){
+        var row = $('#dg').datagrid('getRows')[index];
+        if (row.isNewRecord){
+            $('#dg').datagrid('deleteRow',index);
+        } else {
+            $('#dg').datagrid('collapseRow',index);
+        }
+    }
+
+
+    
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

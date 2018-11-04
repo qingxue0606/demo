@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>
+
+  <style type="text/css">
+        .left{
+            width:120px;
+            float:left;
+        }
+        .left table{
+            background:#E0ECFF;
+        }
+        .left td{
+            background:#eee;
+        }
+        .right{
+            float:right;
+            width:600px;
+        }
+        .right table{
+            background:#E0ECFF;
+            width:100%;
+        }
+        .right td{
+            background:#fafafa;
+            text-align:center;
+            padding:2px;
+        }
+        .right td{
+            background:#E0ECFF;
+        }
+        .right td.drop{
+            background:#fafafa;
+            width:100px;
+        }
+        .right td.over{
+            background:#FBEC88;
+        }
+        .item{
+            text-align:center;
+            border:1px solid #499B33;
+            background:#fafafa;
+            width:100px;
+        }
+        .assigned{
+            border:1px solid #BC2A4D;
+        }
+        
+    </style>
+
+
+
+</head>
+<body class="easyui-layout">
+        <div id="mm" class="easyui-menu" style="width:120px;">
+        <div onclick="javascript:alert('new')">New</div>
+        <div>
+            <span>Open</span>
+            <div style="width:150px;">
+                <div><b>Word</b></div>
+                <div>Excel</div>
+                <div>PowerPoint</div>
+            </div>
+        </div>
+        <div icon="icon-save">Save</div>
+        <div class="menu-sep"></div>
+        <div>Exit</div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $(document).bind('contextmenu',function(e){
+                $('#mm').menu('show', {
+                    left: e.pageX,
+                    top: e.pageY
+                });
+                return false;
+            });
+        });
+        function showmenu(){
+            $('#mm').menu('show', {
+                left: 200,
+                top: 100
+            });
+        }
+    </script>
+</body>
+</html>
