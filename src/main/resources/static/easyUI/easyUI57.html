@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-easyui/1.5.21/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.3.5/themes/icon.css">
+
+
+<!--          <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>  -->
+
+        
+ <script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/webjars/jquery-easyui/1.5.21/js/jquery.easyui.min.js"></script>   
+
+
+<!--     <script type="text/javascript" src="jquery-easyui-1.3.5/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.3.5/jquery.easyui.min.js"></script> -->
+<!--       <script type="text/javascript" src="jquery-easyui-1.6.7/plugins/datagrid-detailview.js"></script> -->
+
+
+<!--    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/datagrid-scrollview.js"></script>     -->
+
+    <style type="text/css">
+        
+    </style>
+
+
+
+
+
+</head>
+<body class="easyui-layout">
+  <div style="padding:3px 2px;border-bottom:1px solid #ccc">Ajax Form</div>
+    <form id="ff" action="TestForm" method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input name="name" type="text"></input></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input name="email" type="text"></input></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input name="phone" type="text"></input></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></input></td>
+            </tr>
+        </table>
+    </form>
+
+
+
+
+
+    <script>
+  $('#ff').form({
+        success:function(data){
+            $.messager.alert('Info', data, 'info');
+        }
+    });
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>

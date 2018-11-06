@@ -1,20 +1,35 @@
-    [
-        {"name":"Name","value":"Bill Smith","group":"ID Settings","editor":"text"},
-        {"name":"Address","value":"","group":"ID Settings","editor":"text"},
-        {"name":"Age","value":"40","group":"ID Settings","editor":"numberbox"},
-        {"name":"Birthday","value":"01/02/2012","group":"ID Settings","editor":"datebox"},
-        {"name":"SSN","value":"123-456-7890","group":"ID Settings","editor":"text"},
-        {"name":"Email","value":"bill@gmail.com","group":"Marketing Settings","editor":{
-            "type":"validatebox",
-            "options":{
-                "validType":"email"
-            }
-        }},
-        {"name":"FrequentBuyer","value":"false","group":"Marketing Settings","editor":{
-            "type":"checkbox",
-            "options":{
-                "on":true,
-                "off":false
-            }
-        }}
-    ]
+[{
+	"id":1,
+	"text":"City",
+	"children":[{
+		"id":11,
+		"text":"Wyoming",
+		"children":[{
+			"id":111,
+			"text":"Albin"
+		},{
+			"id":112,
+			"text":"Canon"
+		},{
+			"id":113,
+			"text":"Egbert"
+		}]
+	},{
+		"id":12,
+		"text":"Washington",
+		"state":"closed",
+		"children":[{
+			"id":121,
+			"text":"Bellingham"
+		},{
+			"id":122,
+			"text":"Chehalis"
+		},{
+			"id":123,
+			"text":"Ellensburg"
+		},{
+			"id":124,
+			"text":"Monroe"
+		}]
+	}]
+}]

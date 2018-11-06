@@ -90,27 +90,27 @@ public class DataSourceController {
     }
     
     
-    @PostMapping(value = "/easyUI/saveEasyUi")
+    @RequestMapping(value = "/easyUI/saveEasyUi")
     @ResponseBody
     public Map<String, Object> saveEasyUi(){
         Map<String, Object> map =easyUIData.dataMap();
         System.out.println(map);
         return map;
     }
-    @GetMapping(value = "/easyUI/showForm")
+    @RequestMapping(value = "/easyUI/showForm")
     public String showForm(Model model,int index){
         System.out.println(index);
         model.addAttribute("index", index);
         return "easyui/form";
     }
-    @GetMapping(value = "/easyUI/getdetail")
+    @RequestMapping(value = "/easyUI/getdetail")
     public String getdetail(Model model,int index){
         System.out.println(index);
         model.addAttribute("index", index);
         return "easyui/tableDetial";
     }
     
-    @PostMapping(value = "/easyUI/dataEasyUITestJsaon")
+    @RequestMapping(value = "/easyUI/dataEasyUITestJsaon")
     @ResponseBody
     public String dataTestJsaon() throws IOException{
         JSONArray btnArray = null;
@@ -125,6 +125,14 @@ public class DataSourceController {
         
         return easyUIData.tableSplitResult();
     }
+    
+    @RequestMapping(value = "/easyUI/TestForm")
+    @ResponseBody
+    public String TestForm(String name){
+        
+        return "Your Name:"+name;
+    }
+    
     
     
     
